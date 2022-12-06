@@ -1,0 +1,1320 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+  font-size: 62.5%; /* 16px * 62.5% = 10px */
+  width: 100%;
+}
+body {
+  color: #333; /* RGB */
+  font-family: 'TsukuARdGothic-Bold', 'TsukuBRdGothic-Bold', YuGothic, 'Yu Gothic', sans-serif;
+  font-weight: 600;
+  font-size: 1.6em;
+  line-height: 3.0rem;
+  text-align: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../manicipality-site_assets/common/background_img/background-img.jpg");
+  max-width: 1440px;
+}
+input, textarea, select {
+  font-family: 'TsukuARdGothic-Bold', 'TsukuBRdGothic-Bold', YuGothic, 'Yu Gothic', sans-serif;
+}
+.header-content-wrapper {
+  max-width: 1440px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 125px;
+}
+.header__logo a img {
+  width: 100%;
+}
+.header__top-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -80px;
+  font-size: 1.8rem;
+}
+.header__top-button ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 125px;
+  gap: 20px;
+}
+.header__top-button ul li a {
+  text-decoration: none;
+}
+.header__top-button__citizen {
+  background: #C7E4C5;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #fff;
+  padding: 20px 20px;
+  color: #333;
+}
+.header__top-button__sightseeing {
+  background: #B4DCE2;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #fff;
+  padding: 20px 20px;
+  color: #333;
+}
+.header__top-button__immigration {
+  background: #ECC2CE;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #fff;
+  padding: 20px 20px;
+  color: #333;
+}
+.header__top-button__if {
+  background: #A73C40;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #fff;
+  padding: 20px 20px;
+  color: #FFF;
+}
+.header__menu__wrap {
+  width: 100%;
+  margin: 80px auto 0;
+}
+.header__menu__lists {
+  display: flex;
+  list-style: none;
+}
+.header__menu__list {
+  width: 20%;
+  height: 60px;
+  background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
+  position: relative;
+  transition: all .3s;
+}
+.header__menu__list:hover {
+  background-color: #AFC9AE;
+}
+.header__menu__list:not(:first-child)::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s;
+}
+.header__menu__list:hover::before {
+  background-color: #fff;
+}
+.header__menu__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  transition: all .3s;
+}
+.header__menu__list:hover a {
+  color: #000;
+  background-color: #FFF;
+  opacity: 0.6;
+}
+.dropdown__lists {
+  display: none; /*デフォルトでは非表示の状態にしておく*/
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  list-style: none;
+}
+.header__menu__list:hover .dropdown__lists {
+  display: block; /*Gナビメニューにホバーしたら表示*/
+}
+.dropdown__list {
+  background-color: #769175;
+  height: 60px;
+  transition: all .3s;
+  position: relative;
+}
+.dropdown__list:not(:first-child)::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dropdown__list:hover {
+  background-color: #AFC9AE;
+}
+.dropdown__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  color: #fff;
+}
+.dropdown__list a::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  transform: rotate(135deg);
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 5px);
+}
+.hamburger-menu {
+  display: none;
+}
+@media(max-width: 1400px) {
+  .header__menu__wrap {
+    width: 100%;
+    margin: 80px auto 50px;
+  }
+}
+@media(max-width: 1100px) {
+  .header__top-button {
+    display: none;
+  }
+  .header__menu__wrap {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  /*ハンバーガーボタン(3本線)パーツ*/
+  .menu-btn {
+    position: fixed;
+    margin: 30px 125px 0 0;
+    top: 5px;
+    right: 25px;
+    display: flex;
+    height: 75px;
+    width: 75px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
+    transition-duration: 0.3s;
+    border: 2px #FFF solid;
+  }
+  .menu-btn span, .menu-btn span:before, .menu-btn span:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 35px;
+    border-radius: 3px;
+    background-color: #FFF;
+    position: absolute;
+  }
+  .menu-btn span:before {
+    bottom: 8px;
+  }
+  .menu-btn span:after {
+    top: 8px;
+  }
+  /*ハンバーガーメニューパーツ*/
+  .hamburger-contents {
+    background-image: url("../manicipality-site_assets/common/background_img/background-img.jpg");
+    color: #333;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 340px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 10px;
+    transition-duration: 0.3s;
+    z-index: 1;
+    overflow: auto;
+    transform: translateX(110%);
+  }
+  /*チェックボックス：オン・オフ動作のパーツ*/
+  #menu_btn_check:checked ~ .hamburger-contents {
+    transform: translateX(0);
+  }
+  #menu_btn_check:checked + .menu-btn {
+    transform: translateX(340px);
+    transition-duration: 0.3s;
+  }
+  /*閉じる動作のパーツ：ボタンか画面全体のマスクで閉じる*/
+  .menu-close {
+    display: block;
+    background: #FFF;
+    color: #333;
+    text-align: center;
+    margin-top: 15px;
+    border: 2px #769175 solid;
+  }
+  #menu_btn_check:checked ~ label.menu-mask {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  /*チェックボックス非表示*/
+  .hamburger-menu input[type="checkbox"] {
+    transform: translateX(-100vw);
+  }
+  .burger-wrap li {
+    list-style: none;
+  }
+  .burger-wrap li a {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
+    margin-top: 5px;
+    border: 1px solid #707070;
+    border-radius: 5px;
+  }
+  .burger-wrap .burger-wrap__citizen {
+    background: #C7E4C5;
+    color: #333;
+  }
+  .burger-wrap .burger-wrap__sightseeing {
+    background: #B4DCE2;
+    color: #333;
+  }
+  .burger-wrap .burger-wrap__immigration {
+    background: #ECC2CE;
+    color: #333;
+  }
+  .burger-wrap .burger-wrap__if {
+    background: #A73C40;
+    color: #FFF;
+  }
+}
+@media(max-width: 830px) {
+  .header-content-wrapper {
+    max-width: 830px;
+    padding: 0 50px;
+  }
+  .menu-btn {
+    width: 45px;
+    height: 45px;
+    margin: 30px 50px 0 0;
+  }
+}
+@media(max-width: 420px) {
+  .header-content-wrapper {
+    max-width: 420px;
+    padding: 0 30px;
+  }
+  .header-content-wrapper .header__logo {
+    width: 35%;
+  }
+  .menu-btn {
+    width: 45px;
+    height: 45px;
+    margin: 15px 30px 0 0;
+  }
+}
+.top-wrapper {
+  max-width: 1440px;
+  text-align: center;
+  padding: 50px 125px 50px 125px;
+}
+.section-top__img {
+  width: 100%;
+  background-repeat: no-repeat;
+}
+@media(max-width: 1420px) {
+  .section-top__img {
+    margin-top: -90px;
+  }
+}
+@media(max-width: 830px) {
+  .top-wrapper {
+    padding: 50px;
+    max-width: 830px;
+  }
+}
+@media(max-width: 420px) {
+  .top-wrapper {
+    max-width: 420px;
+    padding: 60px 30px 30px 30px;
+  }
+}
+.section-information-content-wrapper {
+  max-width: 1440px;
+  padding: 0 125px 90px 125px;
+}
+.section-information-content-wrapper h2 {
+  display: inline-block;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFF;
+  padding: 10px 40px;
+  background: #A73C40;
+  border-radius: 20px;
+}
+.section-information-content-wrapper p {
+  text-align: left;
+  font-size: 1.8rem;
+  background: #FFF;
+  border-radius: 15px;
+  padding: 50px;
+  border: 0.5px solid;
+  border-color: #707070;
+  margin-top: -25px;
+}
+.section-information-content-wrapper p a {
+  padding-left: 20px;
+  color: #333;
+}
+@media(max-width: 830px) {
+  .section-information-content-wrapper {
+    padding: 0px 50px 50px 50px;
+    max-width: 830px;
+  }
+  .section-information-content-wrapper p a {
+    display: block;
+    padding-left: 0;
+  }
+}
+@media(max-width: 420px) {
+  .section-information-content-wrapper {
+    max-width: 420px;
+    padding: 0 30px 30px 30px;
+  }
+  .section-information-content-wrapper h2 {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+  }
+  .section-information-content-wrapper p {
+    font-size: 1.6rem;
+    padding: 30px;
+    margin-top: -25px;
+  }
+  .section-information-content-wrapper p a {
+    display: block;
+    padding-left: 0;
+  }
+}
+.section-emergency-content-wrapper {
+  max-width: 1440px;
+  margin: 0 125px 90px 125px;
+  background: #A73C40;
+  border-radius: 15px;
+  padding: 30px 50px;
+}
+.section-emergency-content-wrapper h2 {
+  display: block;
+  border-bottom: solid 1.5px #fff;
+  color: #FFF;
+  font-size: 2.5rem;
+}
+.section-emergency-content-wrapper p {
+  display: block;
+  color: #FFF;
+}
+.section-emergency__btn {
+  width: 100%;
+  margin-top: 20px;
+}
+.section-emergency__btn ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.section-emergency__btn ul li {
+  display: flex;
+  width: 23%;
+}
+.section-emergency__btn ul li a img {
+  width: 100%;
+}
+@media(max-width: 830px) {
+  .section-emergency-content-wrapper {
+    margin: 0px 50px 80px 50px;
+    max-width: 830px;
+  }
+}
+@media(max-width: 420px) {
+  .section-emergency-content-wrapper {
+    max-width: 420px;
+    margin: 0 30px 50px 30px;
+    padding: 15px 30px;
+  }
+  .section-emergency-content-wrapper h2 {
+    font-size: 2.0rem;
+  }
+  .section-emergency__btn ul {
+    gap: 10px;
+  }
+  .section-emergency__btn ul li {
+    width: 48%;
+  }
+}
+.section-searchbox-content-wrapper {
+  max-width: 1440px;
+  padding: 0 125px 90px 125px;
+}
+.section-searchbox-content-wrapper h2 {
+  text-align: center;
+  font-size: 3.0rem;
+  padding-bottom: 10px;
+}
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  width: 70%;
+  background: #E9E6D7;
+  border: 1px solid;
+  border-color: #707070;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.Box {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.5px solid;
+  border-color: #333;
+  border-radius: 4px;
+}
+.Box-SearchInput {
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  height: 55px;
+  letter-spacing: 0.1em;
+  padding-left: 20px;
+  padding-right: 55px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+}
+@media screen and (max-width: 540px) {
+  .Box-SearchInput {
+    height: 45px;
+    padding-right: 45px;
+    font-size: 1.4rem;
+    ;
+  }
+}
+.Box-Btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  padding: 0;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background: #769175;
+  vertical-align: middle;
+}
+@media screen and (max-width: 540px) {
+  .Box-Btn {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+}
+.Box-Btn-Icon {
+  margin-left: auto;
+  margin-right: auto;
+  width: 19px;
+  height: 19px;
+}
+.wrap p {
+  color: #333;
+  text-align: right;
+  padding-top: 10px;
+}
+.wrap p a {
+  color: #333;
+}
+.section-searchbox__keyword {
+  margin-top: -10px;
+}
+.section-searchbox__keyword__attention {
+  display: flex;
+}
+.section-searchbox__keyword-icon {
+  transform: rotate(-90deg);
+  width: 10%;
+  height: 10%;
+}
+.section-searchbox__keyword__attention p {
+  margin-top: 15px;
+}
+.section-searchbox__keyword ul li {
+  text-align: left;
+  list-style: none;
+  font-size: 1.4rem;
+}
+.section-searchbox__keyword ul li a {
+  text-decoration: none;
+  color: #fff;
+  background: #769175;
+  padding: 6px 15px;
+  border: 0.5px solid;
+  border-color: #707070;
+  border-radius: 20px;
+}
+@media(max-width: 1300px) {
+  .section-searchbox__keyword__attention p {
+    margin-top: -3px;
+  }
+}
+.section-searchbox__scene {
+  padding-top: 30px;
+}
+.section-searchbox__scene h3 {
+  border-bottom: solid 1.5px #333;
+  padding-bottom: 5px;
+  font-size: 2.0rem;
+}
+.section-searchbox__scene p {
+  text-align: center;
+}
+.section-searchbox__scene-button {
+  width: 100%;
+}
+.section-searchbox__scene-button ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding-top: 30px;
+}
+.section-searchbox__scene-button ul li {
+  width: 18%;
+  padding-bottom: 30px;
+}
+.section-searchbox__convenient-function {
+  padding-top: 30px;
+}
+.section-searchbox__convenient-function h3 {
+  border-bottom: solid 1.5px #333;
+  padding-bottom: 5px;
+  font-size: 2.0rem;
+}
+.section-searchbox__convenient-function p {
+  text-align: center;
+}
+.section-searchbox__convenient-function-button {
+  width: 100%;
+}
+.section-searchbox__convenient-function-button ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding-top: 15px;
+}
+.section-searchbox__convenient-function-button ul li {
+  width: 18%;
+  padding-bottom: 20px;
+}
+@media(max-width: 830px) {
+  .section-searchbox-content-wrapper {
+    max-width: 830px;
+    padding: 0 50px 80px 50px;
+  }
+  .wrap {
+    width: 80%;
+    padding: 50px;
+  }
+}
+@media(max-width: 420px) {
+  .section-searchbox-content-wrapper {
+    max-width: 420px;
+    padding: 0 30px 50px 30px;
+  }
+  .section-searchbox-content-wrapper h2 {
+    font-size: 2.0rem;
+    padding-bottom: 5px;
+  }
+  .wrap {
+    max-width: 354px;
+    width: 90%;
+    padding: 15px;
+  }
+  .Box-Btn {
+    width: 45px;
+    height: 45px;
+    line-height: 30px;
+  }
+  .Box-Btn-Icon {
+    width: 20px;
+    height: 20px;
+  }
+  .wrap p {
+    padding-top: 5px;
+  }
+  .wrap p a {
+    font-size: 1.6rem;
+  }
+  .section-searchbox__keyword-icon {
+    width: 15%;
+    height: 15%;
+  }
+  .section-searchbox__keyword__attention p {
+    margin-top: 3px;
+    font-size: 1.6rem;
+  }
+  .section-searchbox__keyword ul li a {
+    font-size: 1.4rem;
+    padding: 3px 10px;
+  }
+  .section-searchbox__scene {
+    padding-top: 30px;
+  }
+  .section-searchbox__scene h3 {
+    border-bottom: solid 1.5px #333;
+    padding-bottom: 5px;
+    font-size: 1.8rem;
+  }
+  .section-searchbox__scene-button ul {
+    gap: 3px;
+    padding-top: 15px;
+  }
+  .section-searchbox__scene-button ul li {
+    width: 30%;
+    padding-bottom: 15px;
+  }
+  .section-searchbox__convenient-function {
+    padding-top: 30px;
+  }
+  .section-searchbox__convenient-function h3 {
+    border-bottom: solid 1.5px #333;
+    padding-bottom: 5px;
+    font-size: 1.8rem;
+  }
+  .section-searchbox__convenient-function-button ul li {
+    width: 48%;
+  }
+}
+.section-news-content-wrapper {
+  max-width: 1440px;
+  padding: 0 125px 90px 125px;
+}
+.section-news-content-wrapper h2 {
+  border-bottom: solid 1.5px #333;
+  padding-bottom: 5px;
+  font-size: 2.5rem;
+}
+.section-news-content-wrapper p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+/*タブのスタイル*/
+.tab_item1 {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #93A1A2;
+  background-image: url("../manicipality-site_assets/shimin-page/news/washi-pattern-03.jpg");
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  display: block;
+  float: left;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  border-radius: 15px 0 0 0;
+}
+.tab_item2 {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #D2BE7F;
+  background-image: url("../manicipality-site_assets/shimin-page/news/japanese-paper_00389.jpg");
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  display: block;
+  float: left;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item3 {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #D7B5B0;
+  background-image: url("../manicipality-site_assets/shimin-page/news/washi-pattern-02.jpg");
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  display: block;
+  float: left;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  border-radius: 0 15px 0 0;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content, #programming:checked ~ #programming_content, #design:checked ~ #design_content {
+  display: block;
+}
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item1 {
+  background-color: #93A1A2;
+  color: #fff;
+}
+.tabs input:checked + .tab_item2 {
+  background-color: #D2BE7F;
+  color: #fff;
+}
+.tabs input:checked + .tab_item3 {
+  background-color: #D7B5B0;
+  color: #fff;
+}
+.tab_content_description ul {
+  list-style: none;
+  text-align: left;
+}
+.tab_content_description ul li {
+  padding-bottom: 15px;
+}
+.tab_content_description ul li a {
+  color: #2680EB;
+}
+.tab_content_button {
+  background: #FFF;
+  border-radius: 70px;
+  padding: 5px 25px;
+  border: 1.5px solid;
+  border-color: #707070;
+  text-decoration: none;
+  color: #333;
+}
+@media(max-width: 830px) {
+  .section-news-content-wrapper {
+    max-width: 830px;
+    padding: 0 50px 80px 50px;
+  }
+}
+@media(max-width: 420px) {
+  .section-news-content-wrapper {
+    max-width: 420px;
+    padding: 0 30px 50px 30px;
+  }
+  .section-news-content-wrapper h2 {
+    font-size: 2.0rem;
+  }
+  .tab_item1 {
+    font-size: 1.5rem;
+  }
+  .tab_item2 {
+    font-size: 1.5rem;
+  }
+  .tab_item3 {
+    font-size: 1.5rem;
+  }
+  .section-news-content-wrapper p {
+    margin-bottom: 15px;
+  }
+  .tab_content_button {
+    font-size: 1.4rem;
+  }
+}
+.section-pickup-content-wrapper {
+  max-width: 1440px;
+  margin: 0 125px 90px 125px;
+}
+.section-pickup-content-wrapper h2 {
+  border-bottom: solid 1.5px #333;
+  padding-bottom: 5px;
+  font-size: 2.5rem;
+}
+.section-pickup-content-wrapper p {
+  text-align: center;
+}
+.section-pickup__banner {
+  width: 100%;
+  padding-top: 30px;
+}
+.section-pickup__banner ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.section-pickup__banner ul li {
+  width: 23%;
+}
+@media(max-width: 830px) {
+  .section-pickup-content-wrapper {
+    max-width: 830px;
+    margin: 0 50px 80px 50px;
+  }
+}
+@media(max-width: 420px) {
+  .section-pickup-content-wrapper {
+    max-width: 420px;
+    margin: 0 30px 50px 30px;
+  }
+  .section-pickup-content-wrapper h2 {
+    font-size: 2.0rem;
+  }
+  .section-pickup__banner {
+    padding-top: 15px;
+  }
+  .section-pickup__banner ul {
+    gap: 5px;
+  }
+  .section-pickup__banner ul li {
+    width: 48%;
+  }
+  .section-pickup__banner ul li a img {
+    width: 100%;
+  }
+}
+.section-about-content-wrapper {
+  max-width: 1440px;
+  padding: 0 125px 90px 125px;
+}
+.section-about__title {
+  display: inline-block;
+  background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
+  padding: 15px 30px;
+  border-radius: 15px;
+  color: #FFF;
+}
+.section-about__title h2 {
+  font-size: 2.5rem;
+}
+.section-about__title p {
+  text-align: center;
+}
+.section-about__population {
+  background: #FFF;
+  border-radius: 15px;
+  border: 0.5px solid;
+  border-color: #707070;
+  padding: 50px;
+  margin-top: -40px;
+}
+.section-about__population h3 {
+  padding-top: 30px;
+  border-bottom: solid 1.5px #333;
+  padding-bottom: 5px;
+  font-size: 2.0rem;
+}
+.section-about__population__contents {
+  padding-top: 25px;
+}
+.section-about__population__contents ul {
+  display: flex;
+  list-style: none;
+}
+.section-about__population__contents ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 15%;
+  line-height: 2.0rem;
+}
+.section-about__population__contents .section-about__population__contents__man {
+  width: 19%;
+}
+.section-about__population__contents .section-about__population__contents__woman {
+  width: 30%;
+}
+.section-about__population__contents .section-about__population__contents__all {
+  width: 75%;
+}
+.section-about__population__contents .section-about__population__contents__house {
+  width: 60%;
+}
+.section-about__population__contents p {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  font-size: 1.4rem;
+  text-align: right;
+}
+.section-about__population__contents a {
+  background: #FFF;
+  border-radius: 70px;
+  padding: 5px 25px;
+  border: 1.5px solid;
+  border-color: #707070;
+  color: #333;
+  text-decoration: none;
+}
+.section-about__contents {
+  display: block;
+  margin-top: 40px;
+}
+.section-about__contents__btn {
+  display: flex;
+  margin-top: 20px;
+}
+.section-about__contents__btn ul {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+  gap: 30px 15px;
+}
+.section-about__contents ul li {
+  width: 23%;
+}
+.readmore-wrap {
+  display: none;
+}
+@media(max-width: 920px) {
+  .section-about__contents__btn .others {
+    display: none;
+  }
+  .section-about__contents__btn ul {
+    gap: 10px;
+  }
+}
+@media(max-width: 830px) {
+  .section-about-content-wrapper {
+    max-width: 830px;
+    padding: 0 50px 80px 50px;
+  }
+}
+@media(max-width: 730px) {
+  .section-about__contents__btn ul {
+    gap: 5px;
+  }
+}
+@media(max-width: 420px) {
+  .section-about-content-wrapper {
+    max-width: 420px;
+    padding: 0px 30px 50px 30px;
+  }
+  .section-about__title h2 {
+    font-size: 2.0rem;
+  }
+  .section-about__population h3 {
+    font-size: 1.8rem;
+  }
+  .section-about__population__contents {
+    padding-top: 15px;
+  }
+  .section-about__population__contents ul {
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+  .section-about__population__contents ul li {
+    width: 23%;
+    line-height: 2.0rem;
+    font-size: 1.4rem;
+  }
+  .section-about__population__contents p {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 1.0rem;
+  }
+  .section-about__population__contents a {
+    font-size: 1.4rem;
+  }
+  .section-about__contents__btn {
+    display: block;
+  }
+  .section-about__contents__btn ul {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-about__contents ul li {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .readmore-wrap {
+    display: block;
+    position: relative;
+  }
+  .readmore-btn {
+    background: #FFF;
+    border-radius: 70px;
+    padding: 5px 25px;
+    border: 1.5px solid;
+    border-color: #707070;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 1.4rem
+  }
+  .readmore-text {
+    position: relative;
+    display: none;
+  }
+  .readmore-check {
+    display: none; /*チェックボックスは常に非表示にしておきます*/
+  }
+  .readmore-check:checked + .readmore-btn {
+    display: none; /*チェックが入るとボタンを非表示にします*/
+  }
+  .readmore-check:checked ~ .readmore-text {
+    display: block;
+  }
+  .readmore-check:checked ~ .readmore-text .readmore-text__btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 5px;
+  }
+  .readmore-check:checked ~ .readmore-text .readmore-text__btn a {
+    display: flex;
+    width: 49%;
+  }
+}
+.footer-content-wrapper {
+  max-width: 1440px;
+  padding-bottom: 90px;
+}
+.footer__return {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 125px 50px 125px;
+}
+.footer__return__before {
+  display: flex;
+  padding-right: 25px;
+}
+.footer__return__before img {
+  width: 24px;
+  height: 24px;
+  padding-right: 10px;
+}
+.footer__return__before a {
+  color: #333;
+}
+.footer__return__top {
+  display: flex;
+}
+.footer__return__top img {
+  width: 24px;
+  height: 24px;
+  padding-right: 10px;
+}
+.footer__return__top a {
+  color: #333;
+}
+.footer__sitemap {
+  background: #FFF;
+  border: 0.5px solid;
+  border-color: #707070;
+  padding: 5px;
+}
+.footer__sitemap ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+.footer__sitemap ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.footer__info {
+  padding: 50px 125px;
+  display: flex;
+}
+.footer__info__city-logo {
+  margin-top: -50px;
+  width: 20%;
+  height: 20%;
+}
+.footer__info ul {
+  padding-top: 20px;
+  text-align: left;
+}
+.footer__info ul li {
+  list-style: none;
+}
+.footer__info ul li a {
+  text-decoration: none;
+  color: #769175;
+  background: #FFF;
+  padding: 5px 10px;
+  border: 0.5px solid;
+  border-color: #707070;
+  border-radius: 5px;
+}
+@media(max-width: 1180px) {
+  .footer__info__city-logo {
+    margin-top: -30px;
+  }
+}
+.footer__inquiry {
+  margin: 0 125px 50px 125px;
+  padding: 20px;
+  background: #FFF;
+  border-radius: 15px;
+  text-align: center;
+}
+.footer__inquiry a {
+  text-decoration: none;
+}
+.footer__inquiry__icon {
+  display: inline-block;
+  width: 5%;
+  height: 5%;
+}
+.footer__inquiry__sentence {
+  display: block;
+  color: #769175;
+}
+.footer__sns {
+  display: inline-flex;
+  justify-content: center;
+  background: #FFF;
+  margin: 0 125px 100px 125px;
+  padding: 20px;
+  border-radius: 15px;
+}
+.footer__sns p {
+  color: #769175;
+  margin-top: 3px;
+}
+.footer__sns__icon {
+  display: flex;
+}
+.footer__sns__icon a img {
+  padding-left: 15px;
+  width: 35px;
+  height: 35px;
+}
+@media(max-width: 830px) {
+  .footer__return {
+    padding: 0 50px 50px 50px;
+  }
+  .footer__sitemap ul {
+    font-size: 1.4rem;
+    gap: 10px;
+  }
+  .footer__info {
+    padding: 30px 50px 50px 50px;
+  }
+  .footer__info ul {
+    margin-top: -30px;
+  }
+  .footer__inquiry {
+    margin: 0 50px 50px 50px;
+  }
+  .footer__sns {
+    margin: 0 50px 50px 50px;
+  }
+}
+@media(max-width: 420px) {
+  .footer-content-wrapper {
+    padding-bottom: 70px;
+  }
+  .footer__return {
+    padding: 0 30px 30px 30px;
+  }
+  .footer__return__before {
+    display: flex;
+    padding-right: 15px;
+  }
+  .footer__return__before img {
+    width: 15px;
+    height: 15px;
+    padding: 8px 5px 0 0;
+  }
+  .footer__return__before a {
+    font-size: 1.4rem;
+  }
+  .footer__return__top img {
+    width: 15px;
+    height: 15px;
+    padding: 8px 5px 0 0;
+  }
+  .footer__return__top a {
+    font-size: 1.4rem;
+  }
+  .footer__sitemap {
+    padding: 15px auto;
+    max-width: 420px;
+  }
+  .footer__sitemap ul {
+    display: none;
+  }
+  .footer__info {
+    padding: 15px 30px 30px 30px;
+    display: flex;
+  }
+  .footer__info__city-logo {
+    margin-top: 0;
+    width: 40%;
+  }
+  .footer__info ul {
+    margin-top: 8px;
+  }
+  .footer__info ul li {
+    font-size: 1.6rem;
+  }
+  .footer__inquiry {
+    margin: 0 30px 30px 30px;
+    padding: 10px;
+  }
+  .footer__inquiry__icon {
+    width: 10%;
+  }
+  .footer__sns {
+    margin: 0 30px 30px 30px;
+    padding: 10px;
+  }
+  .footer__sns p {
+    font-size: 1.6rem;
+  }
+  .footer__sns__icon a img {
+    margin-top: 8px;
+    padding-left: 10px;
+    width: 20px;
+    height: 20px
+  }
+}
