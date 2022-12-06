@@ -301,9 +301,9 @@ input, textarea, select {
     color: #FFF;
   }
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .header-content-wrapper {
-    max-width: 830px;
+    max-width: 900px;
     padding: 0 50px;
   }
   .menu-btn {
@@ -340,10 +340,10 @@ input, textarea, select {
     margin-top: -90px;
   }
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .top-wrapper {
     padding: 50px;
-    max-width: 830px;
+    max-width: 900px;
   }
 }
 @media(max-width: 420px) {
@@ -379,10 +379,10 @@ input, textarea, select {
   padding-left: 20px;
   color: #333;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-information-content-wrapper {
     padding: 0px 50px 50px 50px;
-    max-width: 830px;
+    max-width: 900px;
   }
   .section-information-content-wrapper p a {
     display: block;
@@ -443,10 +443,10 @@ input, textarea, select {
 .section-emergency__btn ul li a img {
   width: 100%;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-emergency-content-wrapper {
     margin: 0px 50px 80px 50px;
-    max-width: 830px;
+    max-width: 900px;
   }
 }
 @media(max-width: 420px) {
@@ -637,9 +637,9 @@ img {
   width: 18%;
   padding-bottom: 20px;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-searchbox-content-wrapper {
-    max-width: 830px;
+    max-width: 900px;
     padding: 0 50px 80px 50px;
   }
   .wrap {
@@ -834,9 +834,9 @@ input[name="tab_item"] {
   text-decoration: none;
   color: #333;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-news-content-wrapper {
-    max-width: 830px;
+    max-width: 900px;
     padding: 0 50px 80px 50px;
   }
 }
@@ -890,9 +890,9 @@ input[name="tab_item"] {
 .section-pickup__banner ul li {
   width: 23%;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-pickup-content-wrapper {
-    max-width: 830px;
+    max-width: 900px;
     margin: 0 50px 80px 50px;
   }
 }
@@ -1019,9 +1019,9 @@ input[name="tab_item"] {
     gap: 10px;
   }
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .section-about-content-wrapper {
-    max-width: 830px;
+    max-width: 900px;
     padding: 0 50px 80px 50px;
   }
 }
@@ -1228,7 +1228,7 @@ input[name="tab_item"] {
   width: 35px;
   height: 35px;
 }
-@media(max-width: 830px) {
+@media(max-width: 900px) {
   .footer__return {
     padding: 0 50px 50px 50px;
   }
