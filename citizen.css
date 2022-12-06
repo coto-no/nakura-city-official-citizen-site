@@ -26,7 +26,7 @@ input, textarea, select {
   justify-content: flex-start;
   padding: 0 125px;
 }
-.header__logo a img {
+.header__logo img {
   width: 100%;
 }
 .header__top-button {
@@ -317,7 +317,7 @@ input, textarea, select {
     max-width: 420px;
     padding: 0 30px;
   }
-  .header-content-wrapper .header__logo {
+  .header__logo img {
     width: 35%;
   }
   .menu-btn {
