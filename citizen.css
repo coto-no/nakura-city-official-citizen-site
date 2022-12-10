@@ -7,14 +7,14 @@ html {
 body {
   color: #333; /* RGB */
   font-family: 'TsukuARdGothic-Bold', 'TsukuBRdGothic-Bold', YuGothic, 'Yu Gothic', sans-serif;
-  font-weight: 550;
+  font-weight: 600;
   font-size: 1.6em;
   line-height: 3.0rem;
   text-align: center;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://github.com/coto-no/nakura-city-official-citizen-site/blob/main/background-img.jpg?raw=true");
+  background-image: url("https://raw.githubusercontent.com/coto-no/nakura-city-official-citizen-site/b1d7192886ccef0baf659a9bb4d6e4bcff9d009e/background-img.jpg");
   max-width: 1440px;
 }
 input, textarea, select {
@@ -26,7 +26,7 @@ input, textarea, select {
   justify-content: flex-start;
   padding: 0 125px;
 }
-.header__logo img {
+.header__logo  img {
   width: 100%;
 }
 .header__top-button {
@@ -206,7 +206,7 @@ input, textarea, select {
     justify-content: center;
     align-items: center;
     z-index: 90;
-    background-image: url("https://github.com/coto-no/nakura-city-official-citizen-site/blob/main/header__menu-background-img2.jpg?raw=true");
+    background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
     transition-duration: 0.3s;
     border: 2px #FFF solid;
   }
@@ -227,7 +227,7 @@ input, textarea, select {
   }
   /*ハンバーガーメニューパーツ*/
   .hamburger-contents {
-    background-image: url("https://github.com/coto-no/nakura-city-official-citizen-site/blob/main/header__menu-background-img2.jpg?raw=true");
+    background-image: url("https://github.com/coto-no/nakura-city-official-citizen-site/blob/main/background-img.jpg?raw=true");
     color: #333;
     position: fixed;
     width: 100%;
@@ -317,7 +317,7 @@ input, textarea, select {
     max-width: 500px;
     padding: 0 30px;
   }
-  .header__logo img {
+.header__logo img {
     width: 35%;
   }
   .menu-btn {
