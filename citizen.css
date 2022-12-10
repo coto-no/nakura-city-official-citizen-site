@@ -206,7 +206,7 @@ input, textarea, select {
     justify-content: center;
     align-items: center;
     z-index: 90;
-    background-image: url("../manicipality-site_assets/shimin-page/site-map/header__menu-background-img2.jpg");
+    background-image: url("https://github.com/coto-no/nakura-city-official-citizen-site/blob/main/header__menu-background-img2.jpg?raw=true");
     transition-duration: 0.3s;
     border: 2px #FFF solid;
   }
