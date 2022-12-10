@@ -199,7 +199,7 @@ input, textarea, select {
     position: fixed;
     margin: 30px 125px 0 0;
     top: 5px;
-    right: 25px;
+    right: 5px;
     display: flex;
     height: 75px;
     width: 75px;
